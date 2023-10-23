@@ -8,4 +8,5 @@ metadata:
 spec:
   type: application
   owner: user:william
-  lifecycle: experimental
+  lifecycle: tst
+  system: desb
