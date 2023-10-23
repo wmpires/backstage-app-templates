@@ -2,7 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
+  tags:
+    - reactjs
+    - frontend
 spec:
-  type: service
+  type: application
   owner: user:william
   lifecycle: experimental
