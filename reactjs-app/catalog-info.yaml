@@ -7,6 +7,6 @@ metadata:
     - reactjs
 spec:
   type: app
-  owner: sbcc
+  owner: sbcc # default is groups
   lifecycle: tst # environment
   system: desb # can be used to store the defl code
