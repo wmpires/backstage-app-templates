@@ -5,7 +5,6 @@ metadata:
   description: Reactjs application
   tags:
     - reactjs
-    - frontend
 spec:
   type: application
   owner: user:william
