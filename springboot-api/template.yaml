@@ -48,7 +48,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: /skeleton
+        url: ./skeleton
         values:
           name: ${{ parameters.name }}
 
