@@ -2,9 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
-  description: Reactjs application
+  description: Angular application
   tags:
-    - reactjs
+    - angular
 spec:
   type: app
   owner: user-experience # department
