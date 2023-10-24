@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  description: Springboot API application
+  tags:
+    - springboot
+    - api
+spec:
+  type: app
+  owner: devops # department
+  lifecycle: tst # environment
+  system: TWIZ # project
