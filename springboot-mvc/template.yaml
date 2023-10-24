@@ -48,7 +48,8 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./skeleton
+        allowedHosts: ['github.com']
+        url: ${{ parameters.repoUrl }}/springboot-mvc/skeleton
         values:
           name: ${{ parameters.name }}
 
