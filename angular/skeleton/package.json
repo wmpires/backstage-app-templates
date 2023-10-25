@@ -2,11 +2,11 @@
   "name": "angular-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "../../../angular-app/node_modules/.bin/ng",
-    "start": "../../../angular-app/node_modules/.bin/ng serve",
-    "build": "../../../angular-app/node_modules/.bin/ng build",
-    "watch": "../../../angular-app/node_modules/.bin/ng build --watch --configuration development",
-    "test": "../../../angular-app/node_modules/.bin/ng test"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
