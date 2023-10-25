@@ -62,13 +62,13 @@ spec:
         defaultBranch: main
         repoVisibility: public
 
-    # The final step is to register our new component in the catalog.
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: ${{ steps['publish'].output.repoUrl }}/catalog-info.yaml
+#    # The final step is to register our new component in the catalog.
+#    - id: register
+#      name: Register
+#      action: catalog:register
+#      input:
+#        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+#        catalogInfoPath: ${{ steps['publish'].output.repoUrl }}/catalog-info.yaml
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
@@ -76,5 +76,8 @@ spec:
       - title: Repository
         url: ${{ steps['publish'].output.remoteUrl }}
       - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
+      - title: ${{ parameters.repoUrl }}
         icon: catalog
         entityRef: ${{ steps['register'].output.entityRef }}
