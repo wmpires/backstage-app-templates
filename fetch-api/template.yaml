@@ -43,10 +43,11 @@ spec:
         method: ${{ parameters.method }}
 
     - id: log-status
-      name: Status
+      name: Response
       action: debug:log
       input:
         messages:
+          - "url: ${{ steps['fetch-api'].output.url }}"
           - "status: ${{ steps['fetch-api'].output.status }}"
           - "headers: ${{ steps['fetch-api'].output.headers }}"
           - "body: ${{ steps['fetch-api'].output.body }}"
