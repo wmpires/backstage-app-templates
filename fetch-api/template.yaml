@@ -42,26 +42,15 @@ spec:
         url: ${{ parameters.url }}
         method: ${{ parameters.method }}
 
-    - id: log-message
-      name: Log Message
+    - id: log-response
+      name: Log Response
       action: debug:log
       input:
-        message: ${{ steps['fetch-api'].output.body }}
+        message: |
+          ${{ steps['fetch-api'].output.status }}
+          ${{ steps['fetch-api'].output.headers }}
+          ${{ steps['fetch-api'].output.body }}
 
-    - id: log-message2
-      name: Log Message 2
-      action: debug:log
-      input:
-        message: ${{ steps['fetch-api'].output.headers }}
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
-    links:
-      - title: demo
-        url: "hello/${{ steps['fetch-api'].output.status }}"
-      - title: demo2
-        url: ${{ steps['fetch-api'].output.body }}
-      - title: demo3
-        url: "${{ steps['fetch-api'].output.body }}"
-    json: ${{ steps['fetch-api'].output }}
-    content: ${{ steps['fetch-api'].output }}
