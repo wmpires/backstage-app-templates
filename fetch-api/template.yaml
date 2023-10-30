@@ -46,9 +46,11 @@ spec:
       - title: demo
         url: "hello/${{ steps['fetch-api'].output.status }}"
       - title: demo2
-        url: ${{ steps['fetch-api'].output.status }}
+        url: ${{ steps['fetch-api'].output.body }}
+      - title: demo3
+        url: "${{ steps['fetch-api'].output.body }}"
     text:
       - title: Status
-        content: ${{ steps['fetch-api'].output.status }}
+        content: "${{ steps['fetch-api'].output.status }}"
       - title: Body
-        content: ${{ steps['fetch-api'].output.body }}
+        content: "${{ steps['fetch-api'].output.body }}"
