@@ -23,10 +23,12 @@ spec:
           title: Url
           type: string
           description: Url of the API to be fetched.
+          default: https://jsonplaceholder.typicode.com/todos/1
         method:
           title: Method
           type: string
           description: GET,POST
+          default: GET
 
 
   # These steps are executed in the scaffolder backend, using data that we gathered
