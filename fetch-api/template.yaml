@@ -57,4 +57,5 @@ spec:
         url: ${{ steps['fetch-api'].output.body }}
       - title: demo3
         url: "${{ steps['fetch-api'].output.body }}"
-    json: ${{ steps['fetch-api'].output.body }}
+    json: ${{ steps['fetch-api'].output }}
+    content: ${{ steps['fetch-api'].output }}
