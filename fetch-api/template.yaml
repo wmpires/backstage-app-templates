@@ -43,13 +43,14 @@ spec:
         method: ${{ parameters.method }}
 
     - id: log-response
-      name: Log Response
+      name: Response
       action: debug:log
       input:
         message: |
-          ${{ steps['fetch-api'].output.status }}
-          ${{ steps['fetch-api'].output.headers }}
-          ${{ steps['fetch-api'].output.body }}
+          
+          status: ${{ steps['fetch-api'].output.status }}
+          headers: ${{ steps['fetch-api'].output.headers }}
+          body: ${{ steps['fetch-api'].output.body }}
 
 
   # Outputs are displayed to the user after a successful execution of the template.
