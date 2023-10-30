@@ -46,10 +46,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: |
-          "status: ${{ steps['fetch-api'].output.status }}"
-          "headers: {}"
-          "body: ${{ steps['fetch-api'].output.body }}"
+        message: ${{ steps['fetch-api'].output }}
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
