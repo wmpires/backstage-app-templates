@@ -42,10 +42,13 @@ spec:
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
+    links:
+      - title: demo
+        url: "hello/${{ steps['fetch-api'].output.status }}"
+      - title: demo2
+        url: ${{ steps['fetch-api'].output.status }}
     text:
       - title: Status
-        content: |
-          `${{ steps['fetch-api'].output.status }}`
+        content: ${{ steps['fetch-api'].output.status }}
       - title: Body
-        content: |
-          `${{ steps['fetch-api'].output.body }}`
+        content: ${{ steps['fetch-api'].output.body }}
