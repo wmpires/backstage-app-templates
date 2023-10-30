@@ -27,13 +27,13 @@ spec:
           title: Method
           type: string
           description: GET,POST
-          
+
 
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
   steps:
     # Each step executes an action, in this case one templates files into the working directory.
-    - id: fetch
+    - id: fetch-api
       name: Fetch API
       action: fetch:api
       input:
@@ -44,8 +44,8 @@ spec:
   output:
     text:
       - title: Status
-        content: ${{ steps['fetch'].output.status }}
+        content: |
+          `${{ steps['fetch-api'].output.status }}`
       - title: Body
-        content: ${{ steps['fetch'].output.body }}
-      - title: Headers
-        content: ${{ steps['fetch'].output.headers }}
+        content: |
+          `${{ steps['fetch-api'].output.body }}`
