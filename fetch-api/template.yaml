@@ -1,0 +1,51 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
+kind: Template
+metadata:
+  name: fetch-api
+  title: Fetch one API
+  description: Test template to fetch one API.
+  tags:
+    - fetch
+spec:
+  owner: devops
+  type: scaffolder
+
+  # These parameters are used to generate the input form in the frontend, and are
+  # used to gather input data for the execution of the template.
+  parameters:
+    - title: Fill in some steps
+      required:
+        - url
+        - method
+      properties:
+        name:
+          title: Url
+          type: string
+          description: Url of the API to be fetched.
+        method:
+          title: Method
+          type: string
+          description: GET,POST
+          
+
+  # These steps are executed in the scaffolder backend, using data that we gathered
+  # via the parameters above.
+  steps:
+    # Each step executes an action, in this case one templates files into the working directory.
+    - id: fetch
+      name: Fetch API
+      action: fetch:api
+      input:
+        url: ${{ parameters.url }}
+        method: ${{ parameters.method }}
+
+  # Outputs are displayed to the user after a successful execution of the template.
+  output:
+    links:
+      - title: Status
+        url: ${{ steps['fetch'].output.status }}
+      - title: Body
+        url: ${{ steps['fetch'].output.body }}
+      - title: Headers
+        url: ${{ steps['fetch'].output.headers }}
