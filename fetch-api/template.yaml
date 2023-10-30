@@ -47,7 +47,8 @@ spec:
       action: debug:log
       input:
         messages:
-          - "url: ${{ steps['fetch-api'].output.url }}"
+          - "url: ${{ steps['fetch-api'].input.url }}"
+          - "method: ${{ steps['fetch-api'].input.method }}"
           - "status: ${{ steps['fetch-api'].output.status }}"
           - "headers: ${{ steps['fetch-api'].output.headers }}"
           - "body: ${{ steps['fetch-api'].output.body }}"
