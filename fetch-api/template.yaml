@@ -19,7 +19,7 @@ spec:
         - url
         - method
       properties:
-        name:
+        url:
           title: Url
           type: string
           description: Url of the API to be fetched.
