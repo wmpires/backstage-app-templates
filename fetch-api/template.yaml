@@ -53,4 +53,4 @@ spec:
 
 
   # Outputs are displayed to the user after a successful execution of the template.
-  output:
+  # output:
