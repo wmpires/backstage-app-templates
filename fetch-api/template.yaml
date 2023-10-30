@@ -46,7 +46,13 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: ${{ steps['fetch-api'].output }}
+        message: ${{ steps['fetch-api'].output.body }}
+
+    - id: log-message2
+      name: Log Message 2
+      action: debug:log
+      input:
+        message: ${{ steps['fetch-api'].output.headers }}
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
